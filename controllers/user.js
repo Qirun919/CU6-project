@@ -77,53 +77,53 @@ const signup = async (name, email, password) => {
   };
 };
 
-// const getUsers = async () => {
-//   const user = await User.find().sort({ _id: -1 });
-//   return user;
-// };
+const getUsers = async () => {
+  const user = await User.find().sort({ _id: -1 });
+  return user;
+};
 
-// const getUser = async (id) => {
-//   const user = await User.findById(id);
-//   return user;
-// }
+const getUser = async (id) => {
+  const user = await User.findById(id);
+  return user;
+}
 
-// const addUser = async (name, email, password, role) => {
-//   // create new user
-//   const newUser = new User({
-//     name,
-//     email,
-//     password,
-//     role,
-//   });
-//   // save into mongoDB
-//   await newUser.save();
-//   return newUser;
-// };
+const addUser = async (name, email, password, role) => {
+  // create new user
+  const newUser = new User({
+    name,
+    email,
+    password,
+    role,
+  });
+  // save into mongoDB
+  await newUser.save();
+  return newUser;
+};
 
-// const updateUser = async (id, name, email, password, role) => {
-//   const updatedUser = await User.findByIdAndUpdate(
-//     id,
-//     {
-//       name,
-//       email,
-//       password,
-//       role,
-//     },
-//     {
-//       new: true,
-//     }
-//   );
-//   return updatedUser;
-// };
+const updateUser = async (id, name, email, password, role) => {
+  const updatedUser = await User.findByIdAndUpdate(
+    id,
+    {
+      name,
+      email,
+      password,
+      role,
+    },
+    {
+      new: true,
+    }
+  );
+  return updatedUser;
+};
 
-// const deleteUser = async (id) => {
-//   return await User.findByIdAndDelete(id);
-// };
+const deleteUser = async (id) => {
+  return await User.findByIdAndDelete(id);
+};
 
 module.exports = {
-  // login,
-  // signup,
-  // getUserByEmail,
+  login,
+  signup,
+  getUserByEmail,
   getUsers,
   getUser,
   addUser,
