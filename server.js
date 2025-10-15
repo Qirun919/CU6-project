@@ -18,7 +18,7 @@ app.use(express.json());
 // connect to MongoDB using Mongoose
 async function connectToMongoDB() {
   try {
-    await mongoose.connect("mongodb://localhost:27017/JobSearch");
+    await mongoose.connect(process.env.MONGODB_URL + "/JobSearch");
     console.log("MongoDB is Connected");
   } catch (error) {
     console.log(error);
