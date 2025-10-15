@@ -29,27 +29,26 @@ async function connectToMongoDB() {
 connectToMongoDB();
 
 // setup root route
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Happy coding!");
 });
 
 // import all the routers
 
 // users
-app.use("/users", require("./routes/user"));
+app.use("/api/users", require("./routes/user"));
 
 // jobs
-app.use("/jobs", require("./routes/job"));
+app.use("/api/jobs", require("./routes/job"));
 
 // specialisations
-app.use("/specialisations", require("./routes/specialisation"));
+app.use("/api/specialisations", require("./routes/specialisation"));
 
 // savedjobs
-app.use("/savedjobs", require("./routes/savedJobs"));
+app.use("/api/savedjobs", require("./routes/savedJobs"));
 
 // contact
-app.use("/contacts", require("./routes/contact"));
-
+app.use("/api/contacts", require("./routes/contact"));
 
 // start the express server
 app.listen(5919, () => {
